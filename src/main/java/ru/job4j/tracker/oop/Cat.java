@@ -11,6 +11,7 @@ public class Cat {
     public void eat(String food) {
         this.food = food;
     }
+
     public void giveNick(String nick) {
         this.name = nick;
     }
