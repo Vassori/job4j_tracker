@@ -6,7 +6,7 @@ public class DummyDic {
     }
 
     public static void main(String[] args) {
-        DummyDic Dic = new DummyDic();
-        System.out.println(Dic.engToRus("test"));
+        DummyDic dic = new DummyDic();
+        System.out.println(dic.engToRus("test"));
     }
 }
