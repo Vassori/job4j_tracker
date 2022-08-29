@@ -24,7 +24,7 @@ public class Error {
     public static void main(String[] args) {
         Error error = new Error();
         error.printInfo();
-        Error active = new Error(true, 3, "Active.");
+        Error active = new Error(true, 1, "Active.");
         active.printInfo();
         Error inactive = new Error(false, 0, "Inactive.");
         inactive.printInfo();
