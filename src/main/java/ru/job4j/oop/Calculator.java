@@ -7,12 +7,12 @@ public class Calculator {
         return a + x;
     }
 
-    public int multiply(int b) {
-        return b * x;
+    public static int minus(int b) {
+        return b - x;
     }
 
-    public static int minus(int c) {
-        return c - x;
+    public int multiply(int c) {
+        return c * x;
     }
 
     public int divide(int d) {
