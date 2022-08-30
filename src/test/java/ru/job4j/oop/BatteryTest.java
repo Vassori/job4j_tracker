@@ -24,7 +24,7 @@ class BatteryTest {
     }
 
     @Test
-    public void whenThis95Another0ThenAnotherLoadEqual80() {
+    public void whenThis95Another0ThenAnotherLoadEqual95() {
         Battery charger = new Battery(95);
         Battery another = new Battery(0);
         charger.exchange(another);
