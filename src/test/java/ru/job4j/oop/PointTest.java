@@ -15,7 +15,7 @@ public class PointTest {
     }
 
     @Test
-    public void whenAMinus20B20Then2() {
+    public void whenAMinus20B20Then4() {
         Point a = new Point(-2, 0);
         Point b = new Point(2, 0);
         double rsl = a.distance(b);
@@ -24,7 +24,7 @@ public class PointTest {
     }
 
     @Test
-    public void whenA22B22Then2() {
+    public void whenA22B22Then0() {
         Point a = new Point(2, 2);
         Point b = new Point(2, 2);
         double rsl = a.distance(b);
@@ -33,7 +33,7 @@ public class PointTest {
     }
 
     @Test
-    public void whenAMinus22B2Minus2Then() {
+    public void whenAMinus22B2Minus2Then5Dot66() {
         Point a = new Point(-2, 2);
         Point b = new Point(2, -2);
         double rsl = a.distance(b);
