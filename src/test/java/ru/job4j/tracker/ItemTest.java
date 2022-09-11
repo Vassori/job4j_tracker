@@ -15,7 +15,7 @@ class ItemTest {
     }
 
     @Test
-    public void whenTestFindAll() {
+    public void whenTestFindAl() {
         Tracker tracker = new Tracker();
         Item first = new Item("First");
         Item second = new Item("Second");
