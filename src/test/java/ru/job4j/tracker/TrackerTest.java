@@ -66,13 +66,13 @@ public class TrackerTest {
     }
 
     @Test
-    public void whenDelet() {
+    public void whenDelete() {
         Tracker tracker = new Tracker();
         Item bug = new Item();
         bug.setName("Bug");
         tracker.add(bug);
         int id = bug.getId();
-        tracker.delet(id);
+        tracker.delete(id);
         assertThat(tracker.findById(id)).isNull();
     }
 }
