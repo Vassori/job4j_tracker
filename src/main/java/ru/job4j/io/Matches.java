@@ -17,7 +17,7 @@ public class Matches {
                 System.out.println("Осталось " + count + " спичек.");
                 turn = !turn;
             } else {
-                System.out.println("Неверно. Взять нужно от 1 до 3 включительно.");
+                System.out.println("Неверно. Ввести нужно от 1 до 3 включительно.");
             }
         }
         if (!turn) {
