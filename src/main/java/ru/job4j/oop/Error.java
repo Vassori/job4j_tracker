@@ -6,7 +6,6 @@ public class Error {
     private String message;
 
     public Error() {
-
     }
 
     public Error(boolean active, int status, String message) {
@@ -16,7 +15,7 @@ public class Error {
     }
 
     public void printInfo() {
-        System.out.println("Activity : " + active);
+        System.out.println("Activity: " + active);
         System.out.println("Status: " + status);
         System.out.println("Message: " + message);
     }
