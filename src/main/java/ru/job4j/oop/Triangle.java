@@ -1,14 +1,14 @@
 package ru.job4j.oop;
 
 public class Triangle {
-    private Point first;
-    private Point second;
-    private Point third;
+    private Point a;
+    private Point b;
+    private Point c;
 
-    public Triangle(Point apoint, Point bpoint, Point cpoint) {
-        this.first = apoint;
-        this.second = bpoint;
-        this.third = cpoint;
+    public Triangle(Point a, Point b, Point c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
     public double semiPerimeter(double ab, double ac, double bc) {
@@ -21,9 +21,9 @@ public class Triangle {
 
     public double area() {
         double rsl = -1;
-        double ab = first.distance(second);
-        double ac = first.distance(third);
-        double bc = second.distance(third);
+        double ab = a.distance(b);
+        double ac = a.distance(c);
+        double bc = b.distance(c);
         if (this.exist(ab, ac, bc)) {
             double p = semiPerimeter(ab, ac, bc);
             rsl = Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
