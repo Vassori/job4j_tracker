@@ -11,9 +11,9 @@ class TriangleTest {
         Point b = new Point(4, 0);
         Point c = new Point(0, 4);
         Triangle triangle = new Triangle(a, b, c);
-        double result = triangle.area();
+        double rsl = triangle.area();
         double expected = 8;
-        assertThat(result).isCloseTo(expected, offset(0.001));
+        assertThat(rsl).isCloseTo(expected, offset(0.001));
     }
 
     @Test
@@ -22,8 +22,8 @@ class TriangleTest {
         Point b = new Point(0, 0);
         Point c = new Point(3, 0);
         Triangle triangle = new Triangle(a, b, c);
-        double result = triangle.area();
+        double rsl = triangle.area();
         double expected = -1;
-        assertThat(result).isCloseTo(expected, offset(0.001));
+        assertThat(rsl).isCloseTo(expected, offset(0.001));
     }
 }
