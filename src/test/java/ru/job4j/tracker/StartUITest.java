@@ -17,7 +17,7 @@ class StartUITest {
     }
 
     @Test
-    public void whenReplaceItem() {
+    void whenReplaceItem() {
         Tracker tracker = new Tracker();
         Item item = new Item("New Item");
         tracker.add(item);
@@ -28,7 +28,7 @@ class StartUITest {
     }
 
     @Test
-    public void whenDeleteItem() {
+    void whenDeleteItem() {
         Tracker tracker = new Tracker();
         Item item = new Item("New Item");
         tracker.add(item);
