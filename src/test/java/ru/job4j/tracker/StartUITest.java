@@ -17,18 +17,18 @@ class StartUITest {
     }
 
     @Test
-    void editItem() {
+    void whenReplaceItem() {
         Tracker tracker = new Tracker();
         Item item = new Item("New Item");
         tracker.add(item);
         String[] answers = {String.valueOf(item.getId()), "Edited Item"};
-        StartUI.editItem(new MockInput(answers), tracker);
+        StartUI.replaceItem(new MockInput(answers), tracker);
         Item editedItem = tracker.findById(item.getId());
         assertThat(editedItem.getName()).isEqualTo("Edited Item");
     }
 
     @Test
-    void deleteItem() {
+    void whenDeleteItem() {
         Tracker tracker = new Tracker();
         Item item = new Item("New Item");
         tracker.add(item);
