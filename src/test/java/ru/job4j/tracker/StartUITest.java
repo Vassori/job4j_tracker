@@ -67,7 +67,7 @@ class StartUITest {
         assertThat(output.toString()).isEqualTo(
                 "Menu:" + ln
                         + "0. Exit program" + ln
-                        + "=== Exit from the program ===" +ln
+                        + "=== Exit from the program ===" + ln
         );
     }
 
