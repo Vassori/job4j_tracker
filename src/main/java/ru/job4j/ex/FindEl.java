@@ -14,6 +14,7 @@ public class FindEl {
         }
         return result;
     }
+
     public static void main(String[] args) throws ElementNotFoundException {
         String[] workingWeek = {"Mon", "Tue", "Wed", "Thu", "Fri"};
         try {
