@@ -11,7 +11,7 @@ public class ValidateInput extends ConsoleInput {
                 value = super.askInt(question);
                 invalid = false;
             } catch (NumberFormatException nfe) {
-                System.out.println("Пожалуйста, введите корректные данные");
+                System.out.println("Please enter correct information");
             }
         } while (invalid);
         return value;
