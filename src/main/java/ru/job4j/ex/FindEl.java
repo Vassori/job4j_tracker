@@ -15,7 +15,7 @@ public class FindEl {
         return result;
     }
 
-    public static void main(String[] args) throws ElementNotFoundException {
+    public static void main(String[] args) {
         String[] workingWeek = {"Mon", "Tue", "Wed", "Thu", "Fri"};
         try {
             indexOf(workingWeek, "Sun");
