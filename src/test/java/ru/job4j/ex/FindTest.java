@@ -29,7 +29,7 @@ class FindTest {
     }
 
     @Test
-    void henIndexEqualsArrayLength() {
+    void whenIndexEqualsArrayLength() {
         String[] data = {"one", "two", "three"};
         int index = 3;
         IllegalArgumentException exception = assertThrows(
