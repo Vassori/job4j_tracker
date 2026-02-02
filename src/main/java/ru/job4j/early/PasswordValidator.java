@@ -4,15 +4,15 @@ public class PasswordValidator {
     private static final String[] FORBIDDEN = {"qwerty", "12345", "password", "admin", "user"};
 
     public static String validate(String password) {
-        if (password == null){
+        if (password == null) {
             throw new IllegalArgumentException("Password can't be null");
         }
-        if (password.length() < 8 || password.length() > 32){
+        if (password.length() < 8 || password.length() > 32) {
             throw new IllegalArgumentException("Password should be length [8, 32]");
         }
         String pswd = password.toLowerCase();
-        for (String value: FORBIDDEN) {
-            if(pswd.contains(value)) {
+        for (String value : FORBIDDEN) {
+            if (pswd.contains(value)) {
                 throw new IllegalArgumentException(
                         "Password shouldn't contain substrings: qwerty, 12345, password, admin, user"
                 );
@@ -27,19 +27,16 @@ public class PasswordValidator {
             if (hasUpCase && hasLowCase && hasDigit && hasSpecial) {
                 break;
             }
-            if (Character.isUpperCase(symbol)) {
+            if (!hasUpCase && Character.isUpperCase(symbol)) {
                 hasUpCase = true;
-                continue;
             }
-            if (Character.isLowerCase(symbol)) {
+            if (!hasLowCase && Character.isLowerCase(symbol)) {
                 hasLowCase = true;
-                continue;
             }
-            if (Character.isDigit(symbol)) {
+            if (!hasDigit && Character.isDigit(symbol)) {
                 hasDigit = true;
-                continue;
             }
-            if (!Character.isLetterOrDigit(symbol)) {
+            if (!hasSpecial &&!Character.isLetterOrDigit(symbol)) {
                 hasSpecial = true;
             }
         }
