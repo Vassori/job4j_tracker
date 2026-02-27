@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 
@@ -20,8 +21,9 @@ public class TrackerTest {
         Item second = new Item("Second");
         tracker.add(first);
         tracker.add(second);
-        Item result = tracker.findAll()[0];
-        assertThat(result.getName()).isEqualTo(first.getName());
+        List<Item> expected = List.of(first, second);
+        List<Item> result = tracker.findAll();
+        assertThat(result).containsAll(expected);
     }
 
     @Test
@@ -34,8 +36,8 @@ public class TrackerTest {
         tracker.add(new Item("First"));
         tracker.add(new Item("Second"));
         tracker.add(new Item("First"));
-        Item[] result = tracker.findByName(first.getName());
-        assertThat(result.length).isEqualTo(3);
+        List<Item> result = tracker.findByName(first.getName());
+        assertThat(result.size()).isEqualTo(3);
     }
 
     @Test
@@ -48,19 +50,17 @@ public class TrackerTest {
         tracker.add(new Item("First"));
         tracker.add(new Item("Second"));
         tracker.add(new Item("First"));
-        Item[] result = tracker.findByName(second.getName());
-        assertThat(result[1].getName()).isEqualTo(second.getName());
+        List<Item> result = tracker.findByName(second.getName());
+        assertThat(result.get(1).getName()).isEqualTo(second.getName());
     }
 
     @Test
     public void whenReplace() {
         Tracker tracker = new Tracker();
-        Item bug = new Item();
-        bug.setName("Bug");
+        Item bug = new Item("Bug");
         tracker.add(bug);
         int id = bug.getId();
-        Item bugWithDesc = new Item();
-        bugWithDesc.setName("Bug with description");
+        Item bugWithDesc = new Item("Bug with description");
         tracker.replace(id, bugWithDesc);
         assertThat(tracker.findById(id).getName()).isEqualTo("Bug with description");
     }
@@ -68,8 +68,7 @@ public class TrackerTest {
     @Test
     public void whenDelete() {
         Tracker tracker = new Tracker();
-        Item bug = new Item();
-        bug.setName("Bug");
+        Item bug = new Item("Bug");
         tracker.add(bug);
         int id = bug.getId();
         tracker.delete(id);
