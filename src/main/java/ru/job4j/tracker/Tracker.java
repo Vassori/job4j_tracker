@@ -14,12 +14,10 @@ public class Tracker {
     }
 
     private int indexOf(int id) {
-        int index = 0;
-        for (Item item : items) {
-            if (item.getId() == id) {
+        for (int index = 0; index < items.size(); index++) {
+            if (items.get(index).getId() == id) {
                 return index;
             }
-            index++;
         }
         return -1;
     }
