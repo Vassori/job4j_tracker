@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class AppleStoreTest {
 
     @Test
-    void whenGetLast() {
+    void whenGetLastHappy() {
         Queue<Customer> customers = new LinkedList<>();
         customers.add(new Customer("Petr", 1000));
         customers.add(new Customer("Stas", 1500));
@@ -24,7 +24,17 @@ class AppleStoreTest {
     }
 
     @Test
-    void whenGetFirst() {
+    void whenQueueIsEmpty() {
+        Queue<Customer> customers = new LinkedList<>();
+        int count = 4;
+        AppleStore appleStore = new AppleStore(customers, count);
+        String customer = appleStore.getLastHappyCustomer();
+        assertThat(customers).isEmpty();
+        assertThat(customer).isEqualTo("The queue is empty");
+    }
+
+    @Test
+    void whenGetFirstUpset() {
         Queue<Customer> customers = new LinkedList<>();
         customers.add(new Customer("Petr", 1000));
         customers.add(new Customer("Stas", 1500));
@@ -37,5 +47,27 @@ class AppleStoreTest {
         AppleStore appleStore = new AppleStore(customers, count);
         String customer = appleStore.getFirstUpsetCustomer();
         assertThat(customer).isEqualTo("Iryna");
+    }
+
+    @Test
+    void whenCountMoreThanQueueThenUpsetDoestExist() {
+        Queue<Customer> customers = new LinkedList<>();
+        customers.add(new Customer("Petr", 1000));
+        customers.add(new Customer("Stas", 1500));
+        customers.add(new Customer("Andrey", 850));
+        int count = 5;
+        AppleStore appleStore = new AppleStore(customers, count);
+        String customer = appleStore.getFirstUpsetCustomer();
+        assertThat(customer).isEqualTo("There are no upset customers today");
+    }
+
+    @Test
+    void whenCount0ThenUpset() {
+        Queue<Customer> customers = new LinkedList<>();
+        customers.add(new Customer("Petr", 1000));
+        int count = 0;
+        AppleStore appleStore = new AppleStore(customers, count);
+        String customer = appleStore.getFirstUpsetCustomer();
+        assertThat(customer).isEqualTo("Petr");
     }
 }
