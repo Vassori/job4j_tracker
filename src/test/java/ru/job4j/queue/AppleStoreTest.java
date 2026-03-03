@@ -62,7 +62,7 @@ class AppleStoreTest {
     }
 
     @Test
-    void whenCount0ThenUpset() {
+    void whenCount0QueueExistsThenUpset() {
         Queue<Customer> customers = new LinkedList<>();
         customers.add(new Customer("Petr", 1000));
         int count = 0;
